@@ -19,13 +19,15 @@
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "gatsby": "^5.9.0",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-emotion": "^8.9.0",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-sharp": "^5.9.0",
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-transformer-sharp": "^5.9.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.2",
