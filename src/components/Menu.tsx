@@ -36,6 +36,7 @@ const MenuBody = styled.div`
   flex-direction: column;
   top: 0;
   background-color: white;
+  
 `;
 const MenuList = styled.div`
   display: flex;
