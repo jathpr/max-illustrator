@@ -5,7 +5,7 @@ type Props = {};
 export const Logo = (props: Props) => {
   return (
     <ClearLink to="/">
-      <Wrapper>maxim moiseev</Wrapper>
+      <Wrapper>max moiseev</Wrapper>
     </ClearLink>
   );
 };
