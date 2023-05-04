@@ -4,9 +4,9 @@ import { Link } from "gatsby";
 type Props = {};
 export const Logo = (props: Props) => {
   return (
-    <ClearLink to="/">
-      <Wrapper>max moiseev</Wrapper>
-    </ClearLink>
+    <Wrapper>
+      <ClearLink to="/">max moiseev</ClearLink>
+    </Wrapper>
   );
 };
 
