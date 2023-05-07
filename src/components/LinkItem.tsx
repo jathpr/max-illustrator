@@ -12,8 +12,8 @@ type LinkProps = {
 export const LinkItem = ({ linkPage, source, alt }: LinkProps) => {
     return (
         // console.log(source)
-        <a style={{ border: "2px solid red" }} href={linkPage}>
-            <StaticImage src={source} alt={alt} />
+        <a className="menu-link__item" href={linkPage}>
+            <StaticImage src={source} alt={alt} width={50} height={50} />
         </a>
     )
 }
