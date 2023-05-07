@@ -1,0 +1,42 @@
+.menu-wrapper {
+    /* border: 2px solid red; */
+}
+
+.menu-body {
+    /* border: 2px solid green; */
+}
+
+.menu-list {
+    /* border: 2px solid blue; */
+}
+
+.menu__item {
+    transition: 0.2s;
+}
+
+.menu__item:hover {
+    color: #000;
+    transition: 0.2s;
+}
+
+.menu-links {
+    /* border: 2px solid blue; */
+}
+
+.menu-link__item {
+    padding: 2rem;
+    border: "2px solid red";
+}
+
+
+@media only screen and (max-width: 400px) {
+    .menu-body {
+        width: 100%;
+    }
+
+    .menu__item {
+        font-size: 4rem;
+        color: #000;
+        text-align: center;
+    }
+}
