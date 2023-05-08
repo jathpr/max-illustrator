@@ -24,10 +24,8 @@
 }
 
 .menu-link__item {
-    padding: 2rem;
     border: "2px solid red";
 }
-
 
 @media only screen and (max-width: 400px) {
     .menu-body {
@@ -38,5 +36,9 @@
         font-size: 4rem;
         color: #000;
         text-align: center;
+    }
+
+    .menu-links {
+        padding-bottom: 3rem;
     }
 }
