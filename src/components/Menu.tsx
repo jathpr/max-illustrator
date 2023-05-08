@@ -32,13 +32,18 @@ const ExpandedMenu = () => {
           <MenuItem className="menu__item" to="/contacts">Contacts</MenuItem>
         </MenuList>
         <Links className="menu-links">
-          <LinkItem linkPage="./" source="../images/menu/instagram.png" alt="instagram" />
-          <LinkItem linkPage="./" source="../images/menu/facebook.png" alt="facebook" />
-          <LinkItem linkPage="./" source="../images/menu/twitter.png" alt="twitter" />
+          <LinkItem linkPage="./">
+            <StaticImage src="../images/menu/instagram.png" alt="instagram" />
+          </LinkItem>
+          <LinkItem linkPage="./">
+            <StaticImage src="../images/menu/facebook.png" alt="facebook" />
+          </LinkItem>
+          <LinkItem linkPage="./">
+            <StaticImage src="../images/menu/twitter.png" alt="twitter" />
+          </LinkItem>
         </Links>
       </MenuBody>
     </MenuWrapper>
-
   )
 };
 
