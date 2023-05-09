@@ -5,6 +5,7 @@ import { Fragment, useState } from "react";
 import React from "react";
 import { LinkItem } from "./LinkItem";
 import "./menu.css";
+import { Drawer } from "@mui/material";
 
 export const Menu = () => {
   const [expanded, setExpanded] = useState(false);
@@ -14,61 +15,52 @@ export const Menu = () => {
       <MenuButton onClick={() => setExpanded(!expanded)}>
         <StaticImage src="../images/menu.png" alt="not A dinosaur" />
       </MenuButton>
-      {expanded && <ExpandedMenu />}
+      <ExpandedMenu opened={expanded} close={() => setExpanded(false)} />
     </Fragment>
   );
 };
 
-const ExpandedMenu = () => {
-  const [opened, setOpened] = useState(false);
-  { if (opened === true) return null }
+type ExpandedMenuProps = {
+  opened: boolean,
+  close: () => void
+}
+
+const ExpandedMenu = ({ opened, close }: ExpandedMenuProps) => {
 
   return (
-    <MenuWrapper className="menu-wrapper" onClick={() => setOpened(!opened)}>
-      <MenuBody className="menu-body">
-        <MenuList className="menu-list">
-          <MenuItem className="menu__item" to="/works">Works</MenuItem>
-          <MenuItem className="menu__item" to="/about">About</MenuItem>
-          <MenuItem className="menu__item" to="/contacts">Contacts</MenuItem>
-        </MenuList>
-        <Links className="menu-links">
-          <LinkItem linkPage="./">
-            <StaticImage src="../images/menu/instagram.png" alt="instagram" />
-          </LinkItem>
-          <LinkItem linkPage="./">
-            <StaticImage src="../images/menu/facebook.png" alt="facebook" />
-          </LinkItem>
-          <LinkItem linkPage="./">
-            <StaticImage src="../images/menu/twitter.png" alt="twitter" />
-          </LinkItem>
-        </Links>
-      </MenuBody>
-    </MenuWrapper>
+    <Drawer
+      anchor={"right"}
+      open={opened}
+      onClose={close}
+    >
+        <MenuBody className="menu-body" onClick={() => close}>
+          <MenuList className="menu-list">
+            <MenuItem className="menu__item" to="/works">Works</MenuItem>
+            <MenuItem className="menu__item" to="/about">About</MenuItem>
+            <MenuItem className="menu__item" to="/contacts">Contacts</MenuItem>
+          </MenuList>
+          <Links className="menu-links">
+            <LinkItem linkPage="./">
+              <StaticImage src="../images/menu/instagram.png" alt="instagram" />
+            </LinkItem>
+            <LinkItem linkPage="./">
+              <StaticImage src="../images/menu/facebook.png" alt="facebook" />
+            </LinkItem>
+            <LinkItem linkPage="./">
+              <StaticImage src="../images/menu/twitter.png" alt="twitter" />
+            </LinkItem>
+          </Links>
+        </MenuBody>
+    </Drawer>
   )
 };
 
-const MenuWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-`;
 const MenuBody = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
   background-color: white;
 `;
 const MenuList = styled.div`
-  padding: 0rem 1.5rem;
   display: flex;
   flex-direction: column;
-  // align-items: end;
-    
 `;
 const Links = styled.div`
   position: absolute;
@@ -77,10 +69,9 @@ const Links = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-    
   `;
 const MenuItem = styled(Link)`
-  padding: 1rem 0rem;
+  // padding: 1rem 0rem;
   width: 100%;
   font-size: 3rem;  
   text-decoration: none;

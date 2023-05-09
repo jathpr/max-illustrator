@@ -1,13 +1,6 @@
-.menu-wrapper {
-    /* border: 2px solid red; */
-}
-
 .menu-body {
-    /* border: 2px solid green; */
-}
-
-.menu-list {
-    /* border: 2px solid blue; */
+    padding: 2rem;
+    text-align: center;
 }
 
 .menu__item {
@@ -20,11 +13,7 @@
 }
 
 .menu-links {
-    /* border: 2px solid blue; */
-}
-
-.menu-link__item {
-    border: "2px solid red";
+    padding: 2rem 0;
 }
 
 @media only screen and (max-width: 400px) {
