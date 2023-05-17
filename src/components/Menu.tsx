@@ -3,8 +3,6 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Fragment, useState } from "react";
 import React from "react";
-import { LinkItem } from "./LinkItem";
-import "./menu.css";
 import { Drawer } from "@mui/material";
 
 export const Menu = () => {
@@ -33,49 +31,75 @@ const ExpandedMenu = ({ opened, close }: ExpandedMenuProps) => {
       open={opened}
       onClose={close}
     >
-        <MenuBody className="menu-body" onClick={() => close}>
-          <MenuList className="menu-list">
-            <MenuItem className="menu__item" to="/works">Works</MenuItem>
-            <MenuItem className="menu__item" to="/about">About</MenuItem>
-            <MenuItem className="menu__item" to="/contacts">Contacts</MenuItem>
-          </MenuList>
-          <Links className="menu-links">
-            <LinkItem linkPage="./">
+      <MenuBody className="menu-body" onClick={() => close}>
+        <MenuList className="menu-list">
+          <MenuItem className="menu__item" to="/works">Works</MenuItem>
+          <MenuItem className="menu__item" to="/about">About</MenuItem>
+          <MenuItem className="menu__item" to="/contacts">Contacts</MenuItem>
+        </MenuList>
+        <Links>
+          <LinkItem>
+            <a href="/">
               <StaticImage src="../images/menu/instagram.png" alt="instagram" />
-            </LinkItem>
-            <LinkItem linkPage="./">
+            </a>
+          </LinkItem>
+          <LinkItem>
+            <a href="/">
               <StaticImage src="../images/menu/facebook.png" alt="facebook" />
-            </LinkItem>
-            <LinkItem linkPage="./">
+            </a>
+          </LinkItem>
+          <LinkItem>
+            <a href="/">
               <StaticImage src="../images/menu/twitter.png" alt="twitter" />
-            </LinkItem>
-          </Links>
-        </MenuBody>
+            </a>
+          </LinkItem>
+        </Links>
+      </MenuBody>
     </Drawer>
   )
 };
 
 const MenuBody = styled.div`
+  padding: 3rem 2rem;
+  text-align: center;
   background-color: white;
+  @media only screen  and (max-width: 400px){
+    border: 2px solid red;
+  }
 `;
 const MenuList = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const Links = styled.div`
+const Links = styled.a`
   position: absolute;
   bottom: 0;
   right: 0;
+  margin-bottom: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+const LinkItem = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  `;
+`;
 const MenuItem = styled(Link)`
-  // padding: 1rem 0rem;
   width: 100%;
   font-size: 3rem;  
   text-decoration: none;
   color: #555;
+  transition: 0.2s;
+  :hover {
+    color: #000;
+    transition: 0.2s;
+  }
+  @media only screen  and (max-width: 400px){
+    font-size: 4rem;
+    color: #000;
+    text-align: center;
+  }
 `;
 const MenuButton = styled.button`
   all: unset;
