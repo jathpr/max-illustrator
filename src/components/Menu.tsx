@@ -27,6 +27,14 @@ const ExpandedMenu = ({ opened, close }: ExpandedMenuProps) => {
 
   return (
     <Drawer
+      PaperProps={{
+        sx: {
+          width: {
+            xs: "100%",
+            sm: "auto"
+          }
+        }
+      }}
       anchor={"right"}
       open={opened}
       onClose={close}
@@ -40,17 +48,17 @@ const ExpandedMenu = ({ opened, close }: ExpandedMenuProps) => {
         <Links>
           <LinkItem>
             <a href="/">
-              <StaticImage src="../images/menu/instagram.png" alt="instagram" />
+              <StaticImage src="../images/menu/icons8-instagram-96.svg" alt="instagram" width={60} />
             </a>
           </LinkItem>
           <LinkItem>
             <a href="/">
-              <StaticImage src="../images/menu/facebook.png" alt="facebook" />
+              <StaticImage src="../images/menu/icons8-facebook-96.svg" alt="facebook" width={60} />
             </a>
           </LinkItem>
           <LinkItem>
             <a href="/">
-              <StaticImage src="../images/menu/twitter.png" alt="twitter" />
+              <StaticImage src="../images/menu/icons8-twitter-96.svg" alt="twitter" width={60} />
             </a>
           </LinkItem>
         </Links>
@@ -62,10 +70,7 @@ const ExpandedMenu = ({ opened, close }: ExpandedMenuProps) => {
 const MenuBody = styled.div`
   padding: 3rem 2rem;
   text-align: center;
-  background-color: white;
-  @media only screen  and (max-width: 400px){
-    border: 2px solid red;
-  }
+  background-color: #fff;
 `;
 const MenuList = styled.div`
   display: flex;
@@ -84,6 +89,9 @@ const LinkItem = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  @media only screen  and (max-width: 600px){
+    padding-bottom: 4rem;
+  }
 `;
 const MenuItem = styled(Link)`
   width: 100%;
@@ -95,7 +103,7 @@ const MenuItem = styled(Link)`
     color: #000;
     transition: 0.2s;
   }
-  @media only screen  and (max-width: 400px){
+  @media only screen  and (max-width: 600px){
     font-size: 4rem;
     color: #000;
     text-align: center;
