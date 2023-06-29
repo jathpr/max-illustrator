@@ -21,6 +21,8 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.12.3",
+    "@types/firebase": "^3.2.1",
+    "firebase": "^9.21.0",
     "gatsby": "^5.9.0",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-emotion": "^8.9.0",
