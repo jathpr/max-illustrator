@@ -17,8 +17,7 @@ const contactsHolder={
 	}
 }
 
-type Props = {};
-export const ContactsInfo = (props: Props) => {
+export const ContactsInfo = () => {
   return (
     <Contacts>
 		<Title>Contacts:</Title>
