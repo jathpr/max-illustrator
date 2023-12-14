@@ -15,5 +15,6 @@ const Wrapper = styled.div`
 `;
 
 const ClearLink = styled(Link)`
+  text-transform: uppercase;
   text-decoration: none;
 `;
