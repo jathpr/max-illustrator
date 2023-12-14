@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
+require("dotenv").config({
+  path: `.env`,
+});
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Max`,
@@ -38,6 +42,13 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    /* {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+        disable:true,
+      },
+    } */
   ],
 };
 
