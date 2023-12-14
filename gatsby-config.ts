@@ -36,8 +36,8 @@ const config: GatsbyConfig = {
         ],
         web: [
           {
-            name: `Schoolbell`,
-            file: "https://fonts.googleapis.com/css2?family=Schoolbell&display=swap",
+            name: `Afacad`,
+            file: "https://fonts.googleapis.com/css2?family=Afacad&family=Schoolbell&display=swap",
           },
         ],
       },
